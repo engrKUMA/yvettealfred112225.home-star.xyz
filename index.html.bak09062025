@@ -1,0 +1,1754 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfred &amp; Yvette - Our Wedding</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .alex-brush-regular {
+            font-family: "Alex Brush", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        :root {
+            --primary-color: #8B5A3C;
+            --secondary-color: #F4F1EA;
+            --accent-color: #D4B896;
+            --text-dark: #2C2C2C;
+            --text-light: #6B6B6B;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Animated Flowers Background */
+        .flowers-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .flower {
+            position: absolute;
+            animation: float 15s infinite linear;
+        }
+
+        .flower:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 20s;
+        }
+
+        .flower:nth-child(2) {
+            left: 20%;
+            animation-delay: -3s;
+            animation-duration: 18s;
+        }
+
+        .flower:nth-child(3) {
+            left: 35%;
+            animation-delay: -7s;
+            animation-duration: 22s;
+        }
+
+        .flower:nth-child(4) {
+            left: 50%;
+            animation-delay: -12s;
+            animation-duration: 19s;
+        }
+
+        .flower:nth-child(5) {
+            left: 65%;
+            animation-delay: -5s;
+            animation-duration: 21s;
+        }
+
+        .flower:nth-child(6) {
+            left: 80%;
+            animation-delay: -9s;
+            animation-duration: 17s;
+        }
+
+        .flower:nth-child(7) {
+            left: 90%;
+            animation-delay: -2s;
+            animation-duration: 23s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Music Player Styles */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: rgba(139, 90, 60, 0.9);
+            border-radius: 50px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .music-player:hover {
+            background: rgba(139, 90, 60, 1);
+            transform: translateY(-2px);
+        }
+
+        .music-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .music-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .music-info {
+            color: white;
+            font-size: 12px;
+            display: none;
+        }
+
+        .music-player.expanded .music-info {
+            display: block;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e6e3e2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgb(175 162 131 / 80%) 0%, rgb(89 55 15 / 80%) 100%), url(images/pic4.jpg) center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-position: right top;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/pic4.jpg') center/cover no-repeat;
+            opacity: 0.5;
+            z-index: 1;
+            mix-blend-mode: overlay;
+            background-position: right top;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1" fill="%23D4B896" opacity="0.3"/><circle cx="75" cy="75" r="1" fill="%238B5A3C" opacity="0.2"/><circle cx="50" cy="10" r="0.5" fill="%23D4B896" opacity="0.4"/></svg>');
+            animation: float 20s infinite linear;
+            z-index: 2;
+        }
+
+        #story h2.section-title.fade-in.visible {
+            background: url(images/1.png);
+            background-size: 500px;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 180px;
+            margin-bottom: inherit;
+            color: #5b3f1d;
+
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 3;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            padding: 3rem;
+            border-radius: 20px;
+
+        }
+
+        .hero h1 {
+            font-family: "Alex Brush", cursive;
+            font-size: 6.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgb(99 78 44 / 72%);
+            letter-spacing: -2px;
+            margin-top: 150px;
+        }
+
+        .hero .ampersand {
+            font-size: 7.5rem;
+            color: #e2c19b;
+            margin: 0 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 4px;
+        }
+
+
+
+
+        .section {
+            padding: 5rem 10%;
+            max-width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 0 auto 1em;
+            color: #5b3f1d;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            border-top: 1px dashed #5b3f1d;
+            display: table;
+        }
+
+
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            background-image: url(images/hero-image.jpg);
+            background-size: cover;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            text-indent: -10000px;
+            background-position: center;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .detail-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .guest-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #5b3f1d36;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .color-swatch {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-methods {
+            margin: 1rem 0;
+        }
+
+        .contact-methods a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-methods a:hover {
+            text-decoration: underline;
+        }
+
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-top: 1.5rem;
+        }
+
+        .gallery {
+            background: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* .photo-engagement {
+            background-image: url(images/engagement.jpg);
+            background-size: cover;
+            background-position: center;
+        } */
+
+        .our-memories-photoholder{
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+        .photo-firstdate {
+            background-image: url(images/firstdate2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* .photo-vacation {
+            background-image: url(images/vacation.jpg);
+            background-size: cover;
+            background-position: center;
+        } */
+        .photo-family {
+            background-image: url(images/family.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .photo-adventure {
+            background-image: url(images/adventure.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .photo-proposal {
+            background-image: url(images/proposal.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .rsvp-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px dashed #5b3f1d;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: #ece7e0;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group.error input,
+        .form-group.error select {
+            border-color: #e74c3c;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover:not(:disabled) {
+            background: #7A4A33;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background: #999;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: #155724;
+            display: none;
+        }
+
+        .email-note {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 6.5rem 0 0 0;
+            border-radius: 15px;
+            background: rgb(91 63 29 / 90%);
+            background-image: url(images/accent1.png);
+            height: 200px;
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+
+        section#details,
+        section#guest-info,
+        section#rsvp {
+            padding-top: 140px;
+            padding-bottom: 140px;
+        }
+
+        section#details {
+            background-color: #f5f2ef;
+        }
+
+
+        section#gallery {
+            background-image: url(images/bk2.png);
+            background-size: 500px;
+            background-repeat: repeat;
+            background-position: top center;
+            padding-top: 140px;
+            padding-bottom: 140px;
+        }
+
+        #gallery h2.section-title.fade-in.visible {
+            background: url(images/border4.png);
+            background-size: 500px;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 180px;
+            margin-bottom: inherit;
+            color: #5b3f1d;
+        }
+
+        #guest-info h2.section-title.fade-in.visible {
+            background: url(images/border4.png);
+            background-size: 500px;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 180px;
+            margin-bottom: inherit;
+            color: #5b3f1d;
+        }
+
+        #rsvp h2.section-title.fade-in.visible {
+            background: url(images/border6.png);
+            background-size: 500px;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 180px;
+            margin-bottom: inherit;
+            color: #5b3f1d;
+        }
+
+        #details h2.section-title.fade-in.visible {
+            background: url(images/border3.png);
+            background-size: 500px;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 180px;
+            margin-bottom: inherit;
+            color: #5b3f1d;
+        }
+
+
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d3b5b5;
+            display: block;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .music-player {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 12px;
+            }
+
+            .music-toggle {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .hero-content {
+                padding: 2rem 1rem;
+                margin: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .ampersand {
+                font-size: 2rem;
+                margin: 0 0.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-date {
+                font-size: 1.3rem;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .nav-links a {
+                color: #5b3f1d;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                color: #fff;
+            }
+
+            .countdown {
+                gap: 1rem;
+                flex-wrap: wrap;
+                padding: 1rem;
+                margin: 1.5rem 0;
+                height: 100px;
+                background-image: none;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .details-grid,
+            .guest-info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .color-palette {
+                gap: 0.5rem;
+            }
+
+            .color-swatch {
+                width: 40px;
+                height: 40px;
+            }
+
+            .detail-card,
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .rsvp-form {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero .ampersand {
+                font-size: 1.5rem;
+                margin: 0 0.25rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .hero-date {
+                font-size: 1.1rem;
+            }
+
+            .countdown {
+                gap: 0.5rem;
+                padding: 0.75rem;
+
+                height: 100px;
+                background-image: none;
+            }
+
+            .countdown-item {
+                flex: 1;
+                min-width: 70px;
+            }
+
+            .countdown-number {
+                font-size: 1.2rem;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1112.0" data-gr-ext-installed="">
+
+    <!-- Animated Flowers Background
+    <div class="flowers-background">
+        <svg class="flower" width="40" height="40" viewBox="0 0 40 40">
+            <g transform="translate(20,20)">
+                <circle cx="0" cy="-8" r="4" fill="#f8bbd9" opacity="0.8">
+                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="-6" cy="4" r="4" fill="#f8bbd9" opacity="0.8">
+                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="6" cy="4" r="4" fill="#f8bbd9" opacity="0.8">
+                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="0" cy="0" r="3" fill="#f8bbd9" opacity="0.9"/>
+            </g>
+        </svg>
+        
+        <svg class="flower" width="35" height="35" viewBox="0 0 35 35">
+            <g transform="translate(17.5,17.5)">
+                <ellipse cx="0" cy="-7" rx="3" ry="5" fill="#ffc1cc" opacity="0.7">
+                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="5s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="-5" cy="3" rx="3" ry="5" fill="#ffc1cc" opacity="0.7">
+                    <animateTransform attributeName="transform" type="rotate" values="72;432" dur="5s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="5" cy="3" rx="3" ry="5" fill="#ffc1cc" opacity="0.7">
+                    <animateTransform attributeName="transform" type="rotate" values="144;504" dur="5s" repeatCount="indefinite"/>
+                </ellipse>
+                <circle cx="0" cy="0" r="2.5" fill="#f06292"/>
+            </g>
+        </svg>
+        
+        <svg class="flower" width="30" height="30" viewBox="0 0 30 30">
+            <g transform="translate(15,15)">
+                <path d="M0,-8 Q-4,-4 0,0 Q4,-4 0,-8" fill="#ffb3ba" opacity="0.8">
+                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <path d="M0,-8 Q-4,-4 0,0 Q4,-4 0,-8" fill="#ffb3ba" opacity="0.8" transform="rotate(72)">
+                    <animateTransform attributeName="transform" type="rotate" values="72;432" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <path d="M0,-8 Q-4,-4 0,0 Q4,-4 0,-8" fill="#ffb3ba" opacity="0.8" transform="rotate(144)">
+                    <animateTransform attributeName="transform" type="rotate" values="144;504" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <path d="M0,-8 Q-4,-4 0,0 Q4,-4 0,-8" fill="#ffb3ba" opacity="0.8" transform="rotate(216)">
+                    <animateTransform attributeName="transform" type="rotate" values="216;576" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <path d="M0,-8 Q-4,-4 0,0 Q4,-4 0,-8" fill="#ffb3ba" opacity="0.8" transform="rotate(288)">
+                    <animateTransform attributeName="transform" type="rotate" values="288;648" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <circle cx="0" cy="0" r="2" fill="#e91e63"/>
+            </g>
+        </svg>
+        
+        <svg class="flower" width="45" height="45" viewBox="0 0 45 45">
+            <g transform="translate(22.5,22.5)">
+                <circle cx="0" cy="-10" r="5" fill="#f8bbd9" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="-7" cy="5" r="5" fill="#f8bbd9" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite" begin="0.6s"/>
+                </circle>
+                <circle cx="7" cy="5" r="5" fill="#f8bbd9" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite" begin="1.2s"/>
+                </circle>
+                <circle cx="0" cy="0" r="4" fill="#ad1457"/>
+            </g>
+        </svg>
+        
+        <svg class="flower" width="38" height="38" viewBox="0 0 38 38">
+            <g transform="translate(19,19)">
+                <ellipse cx="0" cy="-9" rx="4" ry="6" fill="#ffc1cc" opacity="0.7"/>
+                <ellipse cx="-6" cy="4" rx="4" ry="6" fill="#ffc1cc" opacity="0.7" transform="rotate(120)"/>
+                <ellipse cx="6" cy="4" rx="4" ry="6" fill="#ffc1cc" opacity="0.7" transform="rotate(240)"/>
+                <circle cx="0" cy="0" r="3" fill="#c2185b">
+                    <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+        </svg>
+        
+        <svg class="flower" width="33" height="33" viewBox="0 0 33 33">
+            <g transform="translate(16.5,16.5)">
+                <circle cx="0" cy="-7" r="3.5" fill="#ffb3d1" opacity="0.8"/>
+                <circle cx="-5" cy="3" r="3.5" fill="#ffb3d1" opacity="0.8"/>
+                <circle cx="5" cy="3" r="3.5" fill="#ffb3d1" opacity="0.8"/>
+                <circle cx="0" cy="0" r="2.5" fill="#d81b60">
+                    <animate attributeName="fill" values="#d81b60;#f06292;#d81b60" dur="4s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+        </svg>
+        
+        <svg class="flower" width="28" height="28" viewBox="0 0 28 28">
+            <g transform="translate(14,14)">
+                <path d="M0,-6 C-3,-6 -3,0 0,0 C3,0 3,-6 0,-6" fill="#ffc0cb" opacity="0.7"/>
+                <path d="M0,-6 C-3,-6 -3,0 0,0 C3,0 3,-6 0,-6" fill="#ffc0cb" opacity="0.7" transform="rotate(72)"/>
+                <path d="M0,-6 C-3,-6 -3,0 0,0 C3,0 3,-6 0,-6" fill="#ffc0cb" opacity="0.7" transform="rotate(144)"/>
+                <path d="M0,-6 C-3,-6 -3,0 0,0 C3,0 3,-6 0,-6" fill="#ffc0cb" opacity="0.7" transform="rotate(216)"/>
+                <path d="M0,-6 C-3,-6 -3,0 0,0 C3,0 3,-6 0,-6" fill="#ffc0cb" opacity="0.7" transform="rotate(288)"/>
+                <circle cx="0" cy="0" r="2" fill="#e91e63"/>
+            </g>
+        </svg>
+    </div>  -->
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-toggle" id="musicToggle" title="Play/Pause Music">
+            🎵
+        </button>
+        <div class="music-info">
+            <div style="font-weight: 500;">Canon in D</div>
+            <div style="opacity: 0.8;">Pachelbel - Piano</div>
+        </div>
+    </div>
+
+    <!-- Wedding Music Audio - Free Public Domain Songs -->
+    <audio id="weddingMusic" loop preload="auto">
+        <!-- Option 1: Canon in D - Beautiful classical wedding piece -->
+        <source src="music/canon-in-d.mp3" type="audio/mpeg">
+        <source src="music/canon-in-d.ogg" type="audio/ogg">
+
+        <!-- Option 2: Ave Maria - Classic wedding song -->
+        <!-- <source src="music/ave-maria.mp3" type="audio/mpeg"> -->
+
+        <!-- Option 3: Wedding March (Mendelssohn) -->
+        <!-- <source src="music/wedding-march.mp3" type="audio/mpeg"> -->
+
+        <!-- Fallback to gentle piano melody -->
+    </audio>
+
+    <header class="header" style="background: rgb(91, 63, 29); box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 20px;">
+        <nav class="nav">
+            <div class="logo">A &amp; Y</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#guest-info">Guest Info</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Alfred <span class="ampersand">&amp;</span> Yvette</h1>
+            <p class="hero-subtitle">Together with our families, we invite you to celebrate our love</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">--</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">--</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">--</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">--</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            <p class="hero-date">22 November 2025</p>
+        </div>
+    </section>
+
+    <section id="story" class="section">
+        <h2 class="section-title fade-in visible">Our Love Story</h2>
+        <div class="story-grid" style="display: flex; justify-content: center; align-items: flex-end; gap: 2rem;">
+            <div class="story-image"
+                style="background-image: url('images/2/2_Left.JPG'); width: 180px; height: 260px; border-radius: 12px; box-shadow: 0 2px 16px rgba(139,90,60,0.10);">
+            </div>
+            <div class="story-image"
+                style="background-image: url('images/2/2_Center.JPG'); width: 240px; height: 320px; box-shadow: 0 0 0 6px #d4b896, 0 12px 36px rgba(139,90,60,0.16); transform: scale(1.10); z-index: 2; border: 6px solid #fff; border-radius: 16px;">
+            </div>
+            <div class="story-image"
+                style="background-image: url('images/2/2_Right.JPG'); width: 180px; height: 260px; border-radius: 12px; box-shadow: 0 2px 16px rgba(139,90,60,0.10);">
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="section">
+        <h2 class="section-title fade-in">Wedding Details</h2>
+        <div class="details-grid">
+            <div class="detail-card fade-in">
+                <h3>Ceremony</h3>
+                <p><strong>2:30 PM</strong></p>
+                <p>Saint Ferdinand Cathedral Parish</p>
+                <p>Brgy. 5 (Poblacion) Quezon Ave.<br>Lucena City</p>
+                <br>
+                <p>Join us as we exchange vows in this beautiful historic venue.</p>
+            </div>
+            <div class="detail-card fade-in">
+                <h3>Reception</h3>
+                <p><strong>4:00 PM</strong></p>
+                <p>Cerca del Rio Pavilion and Restaurant</p>
+                <p>2437 Purok Sariling Atin, Brgy. Gulang-Gulang<br>Lucena City, Quezon</p>
+                <br>
+                <p>Dinner, dancing, and celebration await!</p>
+            </div>
+            <!--             <div class="detail-card fade-in">
+                <h3>Dress Code</h3>
+                <p><strong>Cocktail Attire</strong></p>
+                <p>Colors: Burgundy, Gold, &amp; Navy</p>
+                <p>Please avoid wearing white or ivory.</p>
+            </div> -->
+        </div>
+    </section>
+
+    <section id="guest-info" class="section">
+        <h2 class="section-title fade-in">Guest Information</h2>
+
+        <div class="guest-info-grid">
+            <div class="info-card fade-in">
+                <h3>A Note on Gifts</h3>
+                <p>Please do not feel obliged to give us a gift. Your presence at our wedding is more than enough.</p>
+                <p>However, if you wish to give us something, a monetary gift would be greatly appreciated.</p>
+            </div>
+
+            <div class="info-card fade-in">
+                <h3>Dress Code</h3>
+                <!-- <p><strong>Cokctail Attire</strong></p> -->
+                <p>We kindly encourage our guests to wear <strong>semi-formal attire</strong> with these colors on our
+                    special day:</p>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #f2766c;" title="Coral"></div>
+                    <div class="color-swatch" style="background: #f9b4a5;" title="Peach"></div>
+                    <div class="color-swatch" style="background: #f59b90;" title="Dusty Rose"></div>
+                </div>
+                <p><em>Peach Tone Colors</em></p>
+            </div>
+
+            <div class="info-card fade-in">
+                <h3>Your Reservation</h3>
+                <p>We'd be honored to have you celebrate with us.</p>
+                <p>Please let us know if you can make it by <strong>October 15, 2025</strong>.</p>
+            </div>
+
+            <div class="info-card fade-in">
+                <h3>Contact Us</h3>
+                <p>For any questions or special requests:</p>
+                <div class="contact-methods">
+                    <p>📱 <a href="tel:+639959049802">0995-904-9802</a></p>
+                    <p>📱 <a href="tel:+639985566272">0998-556-6272</a></p>
+                    <p>💬 Message us via FB Messenger</p>
+                </div>
+                <p class="couple-names"><strong><em>Yvette Bondoc <br>&amp; <br>Alfredo Salumbides Jr</em></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+        <h2 class="section-title fade-in">Our Memories</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item photo-firstdate fade-in">First Date</div>
+            <div class="gallery-item photo-adventure fade-in">Adventures Together</div>
+            <div class="gallery-item fade-in" >
+                Vacation
+            </div>
+            <div class="gallery-item photo-family fade-in">Family Gatherings</div>
+            <div class="gallery-item photo-proposal fade-in">Proposal Day</div>
+            <div class="gallery-item photo-engagement fade-in">Engagement</div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section">
+        <h2 class="section-title fade-in">RSVP</h2>
+        <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;" class="fade-in">
+            <strong>Please respond by October 15, 2025</strong>
+        </p>
+        <div style="max-width: 700px; margin: 0 auto;">
+            <iframe src="https://forms.gle/diTNshv417DpYru8A" width="100%" height="1200" frameborder="0" marginheight="0"
+                marginwidth="0" style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.07);"
+                allowfullscreen>Loading…</iframe>
+        </div>
+        <!-- <form class="rsvp-form fade-in" id="rsvpForm">
+            <div class="form-group">
+                <label for="name">Full Name(s) *</label>
+                <input type="text" id="name" name="name" required="">
+                <div class="error-message" id="nameError">Please enter your full name</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required="">
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+            <div class="form-group">
+                <label for="attendance">Will you attend? *</label>
+                <select id="attendance" name="attendance" required="">
+                    <option value="">Please select</option>
+                    <option value="yes">Joyfully accepts</option>
+                    <option value="no">Regretfully declines</option>
+                </select>
+                <div class="error-message" id="attendanceError">Please select your attendance</div>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of guests *</label>
+                <select id="guests" name="guests" required="">
+                    <option value="">Select number</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <div class="error-message" id="guestsError">Please select number of guests</div>
+            </div>
+            <div class="form-group">
+                <label for="dietary">Dietary restrictions or special requests</label>
+                <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know about any allergies or dietary needs..."></textarea>
+            </div>
+            <button type="submit" class="btn" id="submitBtn">Submit RSVP</button>
+            <div class="success-message" id="successMessage">
+                Thank you for your RSVP! We've received your response and will be in touch soon.
+            </div>
+        </form> -->
+
+        <!--        <div class="email-note fade-in">
+            <strong>📧 Email Setup Required:</strong><br>
+            To enable email functionality, you'll need to:
+            <ol style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                <li>Sign up for a free <a href="https://emailjs.com" target="_blank" style="color: var(--primary-color);">EmailJS account</a></li>
+                <li>Create email templates for RSVP notifications and guest confirmations</li>
+                <li>Replace "YOUR_PUBLIC_KEY", "YOUR_SERVICE_ID", and "YOUR_TEMPLATE_ID" in the code</li>
+            </ol>
+            Alternative options: Formspree, Netlify Forms, or Google Forms integration.
+        </div> -->
+    </section>
+
+    <!-- <section class="section" id="google-form" style="padding-top: 60px; padding-bottom: 60px;">
+        <h2 class="section-title fade-in">Alternate RSVP Form</h2>
+        <div style="max-width: 700px; margin: 0 auto;">
+            <iframe 
+                src="https://forms.gle/diTNshv417DpYru8A" 
+                width="100%" 
+                height="900" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0"
+                style="background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.07);"
+                allowfullscreen
+                >Loading…</iframe>
+        </div>
+    </section> -->
+
+    <footer class="footer">
+        <p>© 2025 Alfred &amp; Yvette. Made with ❤️ for our special day.</p>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script> -->
+
+    <script>
+        /* 
+        FREE WEDDING MUSIC SETUP - Public Domain Songs
+        ==============================================
+        Perfect copyright-free wedding songs for your special day:
+        
+        🎼 RECOMMENDED FREE WEDDING SONGS:
+        
+        1. **Canon in D** by Pachelbel (1680s) - PUBLIC DOMAIN
+           - Most popular classical wedding piece
+           - Beautiful, romantic, and timeless
+           - Perfect for ceremonies and background music
+        
+        2. **Ave Maria** by Schubert (1825) - PUBLIC DOMAIN
+           - Classic sacred wedding song
+           - Elegant and deeply emotional
+           - Great for religious ceremonies
+        
+        3. **Wedding March** by Mendelssohn (1842) - PUBLIC DOMAIN
+           - Traditional processional music
+           - Instantly recognizable
+           - Perfect for walking down the aisle
+        
+        4. **Bridal Chorus** by Wagner (1850) - PUBLIC DOMAIN
+           - "Here Comes the Bride"
+           - Classic entrance music
+           - Traditional wedding favorite
+        
+        📥 WHERE TO GET FREE MIDI/PIANO VERSIONS:
+        
+        • **IMSLP.org** - International Music Score Library (100% legal)
+        • **ClassicalMIDI.co.uk** - Free classical MIDI files
+        • **Piano-MIDI.de** - Piano arrangements
+        • **FreeMIDI.org** - Public domain MIDI collection
+        • **8Notes.com** - Free sheet music & MIDI
+        
+        🎹 EASY CONVERSION:
+        - Download MIDI → Convert to MP3 using online tools
+        - Use "MIDI to MP3 Converter" (free online)
+        - Or record yourself playing piano!
+        
+        💡 CURRENT SETUP:
+        - Default: Canon in D (change filename above)
+        - Volume: 30% for gentle background ambiance
+        - Auto-loop: Continuous romantic atmosphere
+        */
+
+        // Initialize EmailJS (replace with your actual keys)
+        // Get your keys from https://emailjs.com
+        /*         const EMAILJS_CONFIG = {
+                    publicKey: "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+                    serviceId: "YOUR_SERVICE_ID", // Replace with your service ID
+                    templateId: "YOUR_TEMPLATE_ID", // Replace with your template ID
+                    confirmationTemplateId: "YOUR_CONFIRMATION_TEMPLATE_ID" // Replace with confirmation template ID
+                };
+        
+                // Only initialize if config is properly set
+                if (EMAILJS_CONFIG.publicKey !== "YOUR_PUBLIC_KEY") {
+                    emailjs.init(EMAILJS_CONFIG.publicKey);
+                } */
+
+        // Music Player Functionality
+        let isPlaying = false;
+        const musicToggle = document.getElementById('musicToggle');
+        const musicPlayer = document.getElementById('musicPlayer');
+        const weddingMusic = document.getElementById('weddingMusic');
+
+        // Create a gentle wedding melody using Web Audio API as fallback
+        // For "Grow Old With You" - see instructions below for legal MIDI integration
+        let audioContext;
+        let oscillator;
+        let gainNode;
+
+        function createWeddingMelody() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                gainNode = audioContext.createGain();
+                gainNode.connect(audioContext.destination);
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+
+                // Create Canon in D inspired melody (simplified)
+                const canonMelody = [
+                    587.33, // D5
+                    523.25, // C5
+                    587.33, // D5
+                    659.25, // E5
+                    698.46, // F#5
+                    659.25, // E5
+                    587.33, // D5
+                    523.25, // C5
+                    587.33, // D5
+                    698.46, // F#5
+                    783.99, // G5
+                    698.46, // F#5
+                    659.25, // E5
+                    587.33  // D5
+                ];
+                let currentIndex = 0;
+
+                function playNote() {
+                    if (oscillator) {
+                        oscillator.stop();
+                    }
+
+                    oscillator = audioContext.createOscillator();
+                    oscillator.connect(gainNode);
+                    oscillator.type = 'sine'; // Soft piano-like tone
+                    oscillator.frequency.setValueAtTime(canonMelody[currentIndex], audioContext.currentTime);
+
+                    // Gentle fade in and out for piano-like attack
+                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.04, audioContext.currentTime + 0.1);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 2);
+
+                    oscillator.start();
+                    oscillator.stop(audioContext.currentTime + 2);
+
+                    currentIndex = (currentIndex + 1) % canonMelody.length;
+
+                    if (isPlaying) {
+                        setTimeout(playNote, 1800); // Slower, more romantic tempo
+                    }
+                }
+
+                if (isPlaying) {
+                    playNote();
+                }
+            } catch (error) {
+                console.log('Web Audio API not supported');
+            }
+        }
+
+        musicToggle.addEventListener('click', function () {
+            if (!isPlaying) {
+                // Try to play the audio file first
+                weddingMusic.volume = 0.3;
+                const playPromise = weddingMusic.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        isPlaying = true;
+                        musicToggle.textContent = '🎵';
+                        musicToggle.title = 'Pause Music';
+                        musicPlayer.classList.add('expanded');
+                    }).catch(() => {
+                        // If audio file fails, use Web Audio API
+                        isPlaying = true;
+                        createWeddingMelody();
+                        musicToggle.textContent = '🎵';
+                        musicToggle.title = 'Pause Music';
+                        musicPlayer.classList.add('expanded');
+                    });
+                }
+            } else {
+                // Pause music
+                weddingMusic.pause();
+                if (audioContext) {
+                    audioContext.close();
+                }
+                isPlaying = false;
+                musicToggle.textContent = '🎵';
+                musicToggle.title = 'Play Music';
+                musicPlayer.classList.remove('expanded');
+            }
+        });
+
+        // Auto-play music with user interaction
+        document.addEventListener('click', function autoPlay() {
+            if (!isPlaying) {
+                musicToggle.click();
+            }
+            document.removeEventListener('click', autoPlay);
+        }, { once: true });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+            this.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Wedding countdown timer - FIXED
+        function updateCountdown() {
+            const weddingDate = new Date('2025-11-22T14:30:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+
+            if (timeLeft < 0) {
+                document.querySelector('.countdown').innerHTML = '<p style="font-size: 1.5rem; color: var(--primary-color); font-family: \'Playfair Display\', serif;">The big day is here! 🎉</p>';
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgb(91 63 29 / 90%)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'transparent';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Form validation functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const formGroup = field.closest('.form-group');
+            const errorDiv = formGroup.querySelector('.error-message');
+
+            formGroup.classList.add('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function clearError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const formGroup = field.closest('.form-group');
+            const errorDiv = formGroup.querySelector('.error-message');
+
+            formGroup.classList.remove('error');
+            errorDiv.style.display = 'none';
+        }
+
+        /* 
+        function validateForm() {
+            let isValid = true;
+
+            // Clear all previous errors
+            ['name', 'email', 'attendance', 'guests'].forEach(clearError);
+
+            // Validate name
+            const name = document.getElementById('name').value.trim();
+            if (!name) {
+                showError('name', 'Please enter your full name');
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value.trim();
+            if (!email) {
+                showError('email', 'Please enter your email address');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Validate attendance
+            const attendance = document.getElementById('attendance').value;
+            if (!attendance) {
+                showError('attendance', 'Please select your attendance');
+                isValid = false;
+            }
+
+            // Validate guests
+            const guests = document.getElementById('guests').value;
+            if (!guests) {
+                showError('guests', 'Please select number of guests');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+ */
+
+        // RSVP form handling with improved validation
+        const rsvpForm = document.getElementById('rsvpForm');
+        if (rsvpForm) {
+            rsvpForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!validateForm()) {
+                    return;
+                }
+
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    attendance: document.getElementById('attendance').value,
+                    guests: document.getElementById('guests').value,
+                    dietary: document.getElementById('dietary').value.trim() || 'None specified'
+                };
+
+                // Show loading state
+                const submitBtn = document.getElementById('submitBtn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                // Simulate form submission (replace with actual email functionality)
+                setTimeout(() => {
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('rsvpForm').reset();
+
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+
+                    // Auto-hide success message after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 1500);
+
+                // Uncomment below if EmailJS is properly configured
+                /*
+                if (EMAILJS_CONFIG.publicKey !== "YOUR_PUBLIC_KEY") {
+                    // Prepare email parameters
+                    const templateParams = {
+                        to_name: 'Alfred & Yvette',
+                        from_name: formData.name,
+                        from_email: formData.email,
+                        attendance: formData.attendance,
+                        guest_count: formData.guests,
+                        dietary_restrictions: formData.dietary,
+                        reply_to: formData.email
+                    };
+
+                    // Send email to couple
+                    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            
+                            // Send confirmation email to guest
+                            const confirmationParams = {
+                                to_name: formData.name,
+                                to_email: formData.email,
+                                wedding_date: 'December 28, 2025',
+                                ceremony_time: '4:00 PM',
+                                ceremony_location: 'St. Mary\'s Cathedral, 123 Cathedral Street',
+                                reception_time: '6:00 PM',
+                                reception_location: 'Grand Ballroom at The Riverside, 456 River View Drive',
+                                attendance_status: formData.attendance
+                            };
+
+                            return emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.confirmationTemplateId, confirmationParams);
+                        })
+                        .then(function(response) {
+                            console.log('Confirmation email sent!', response.status, response.text);
+                            
+                            // Success message
+                            document.getElementById('successMessage').style.display = 'block';
+                            document.getElementById('rsvpForm').reset();
+                            
+                            // Reset button
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        })
+                        .catch(function(error) {
+                            console.log('FAILED...', error);
+                            
+                            // Error handling
+                            alert('Sorry, there was an error sending your RSVP. Please try again or contact us directly.');
+                            
+                            // Reset button
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        });
+                }
+                */
+            });
+
+            // Clear errors when user starts typing
+            ['name', 'email', 'attendance', 'guests'].forEach(fieldId => {
+                document.getElementById(fieldId).addEventListener('input', () => clearError(fieldId));
+                document.getElementById(fieldId).addEventListener('change', () => clearError(fieldId));
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
