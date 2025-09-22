@@ -1,1056 +1,1176 @@
 <html lang="en">
-  <head>
-    <script
-      async
-      defer
-      src="https://tianji.home-star.xyz/tracker.js"
-      data-website-id="cmfusxdj40001qmar6r67y41r"
-    ></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alfred &amp; Yvette - Our Wedding</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="favicon.ico" />
 
-    <style>
-      /* Reset and Base Styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <script async defer src="https://tianji.home-star.xyz/tracker.js"
+    data-website-id="cmfusxdj40001qmar6r67y41r"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alfred &amp; Yvette - Our Wedding</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="favicon.ico" />
 
-      .alex-brush-regular {
-        font-family: "Alex Brush", cursive;
-        font-weight: 400;
-        font-style: normal;
-      }
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      /* Color Palette */
-      :root {
-        --primary-color: #8b5a3c;
-        --secondary-color: #f4f1ea;
-        --accent-color: #d4b896;
-        --text-dark: #2c2c2c;
-        --text-light: #6b6b6b;
-        --white: #ffffff;
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
+    .alex-brush-regular {
+      font-family: "Alex Brush", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-      /* Body Styles */
-      body {
-        font-family: "Inter", sans-serif;
-        line-height: 1.6;
-        color: var(--text-dark);
-        overflow-x: hidden;
-      }
+    /* Color Palette */
+    :root {
+      --primary-color: #8b5a3c;
+      --secondary-color: #f4f1ea;
+      --accent-color: #d4b896;
+      --text-dark: #2c2c2c;
+      --text-light: #6b6b6b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
 
-      /* Music Player Styles */
-      .music-player {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1001;
-        background: rgba(139, 90, 60, 0.9);
-        border-radius: 50px;
-        padding: 10px 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-      }
-      .music-player:hover {
-        background: rgba(139, 90, 60, 1);
-        transform: translateY(-2px);
-      }
-      .music-toggle {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-      }
-      .music-toggle:hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
-      .music-info {
-        color: white;
-        font-size: 12px;
-        display: none;
-      }
-      .music-player.expanded .music-info {
-        display: block;
-      }
+    /* Body Styles */
+    body {
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
 
-      /* Header and Navigation */
-      .header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        padding: 1rem 0;
-        transition: all 0.3s ease;
-      }
-      .nav {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 2rem;
-      }
-      .logo {
-        font-family: "Playfair Display", serif;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #e6e3e2;
-      }
-      .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 400;
-        transition: color 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 14px;
-      }
-      .nav-links a:hover {
-        color: var(--primary-color);
-      }
-      .mobile-menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        cursor: pointer;
-      }
+    /* Music Player Styles */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1001;
+      background: rgba(139, 90, 60, 0.9);
+      border-radius: 50px;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
 
-      /* Hero Section */
-      .hero {
-        height: 100vh;
-        background: linear-gradient(
-            135deg,
-            rgb(175 162 131 / 80%) 0%,
-            rgb(89 55 15 / 80%) 100%
-          ),
-          url(images/hero-image.jpg) center / cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        background-position: right top;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("images/hero-image.jpg") center/cover no-repeat;
-        opacity: 0.5;
-        z-index: 1;
-        mix-blend-mode: overlay;
-        background-position: right top;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1" fill="%23D4B896" opacity="0.3"/><circle cx="75" cy="75" r="1" fill="%238B5A3C" opacity="0.2"/><circle cx="50" cy="10" r="0.5" fill="%23D4B896" opacity="0.4"/></svg>');
-        animation: float 20s infinite linear;
-        z-index: 2;
-      }
+    .music-player:hover {
+      background: rgba(139, 90, 60, 1);
+      transform: translateY(-2px);
+    }
 
-      /* Hero Content */
-      .hero-content {
-        text-align: center;
-        z-index: 3;
-        animation: fadeInUp 1s ease-out;
-        position: relative;
-        padding: 3rem;
-        border-radius: 20px;
-      }
+    .music-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
 
-      .hero h1 {
-        font-family: "Alex Brush", cursive;
-        font-size: 6.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px rgb(99 78 44 / 72%);
-        letter-spacing: -2px;
-        margin-top: 150px;
-      }
+    .music-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
 
-      .hero .ampersand {
-        font-size: 7.5rem;
-        color: #e2c19b;
-        margin: 0 1rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      }
+    .music-info {
+      color: white;
+      font-size: 12px;
+      display: none;
+    }
 
-      .hero-subtitle {
-        font-size: 1.5rem;
-        color: #fff;
-        margin-bottom: 2rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        font-weight: 300;
-        letter-spacing: 1px;
-      }
+    .music-player.expanded .music-info {
+      display: block;
+    }
 
-      .hero-date {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        font-weight: 300;
-        color: #ffffff;
-        letter-spacing: 4px;
-      }
+    /* Header and Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
 
-      /* Sections */
-      .section {
-        padding: 5rem 5%;
-        max-width: 100%;
-        margin: 0;
-        box-sizing: border-box;
-      }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
 
-      .section-title {
-        font-size: 2.5rem;
-        text-align: center;
-        margin: 0 auto 1em;
-        color: #5b3f1d;
-        font-weight: 300;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        border-top: 1px dashed #5b3f1d;
-        display: table;
-      }
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #e6e3e2;
+    }
 
-      /* Our Story Section */
-      #story h2.section-title.fade-in.visible {
-        background: url(images/1.png);
-        background-size: 500px;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        height: 180px;
-        margin-bottom: inherit;
-        color: #5b3f1d;
-      }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
 
-      .story-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      transition: color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
 
-      .story-text {
-        max-width: 600px;
-        margin: 2rem auto 0;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-light);
-      }
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
 
-      .story-image {
-        width: 100%;
-        height: 400px;
-        background-image: url(images/our-love-story.jpg);
-        background-size: cover;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--white);
-        font-size: 1.2rem;
-        text-indent: -10000px;
-        background-position: center;
-      }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
 
-      /* Details Section */
-      .details-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 3rem;
-        margin-top: 3rem;
-      }
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg,
+          rgb(175 162 131 / 80%) 0%,
+          rgb(89 55 15 / 80%) 100%),
+        url(images/hero-image.jpg) center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background-position: right top;
+    }
 
-      .detail-card {
-        background: var(--white);
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: var(--shadow);
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("images/hero-image.jpg") center/cover no-repeat;
+      opacity: 0.5;
+      z-index: 1;
+      mix-blend-mode: overlay;
+      background-position: right top;
+    }
 
-      .detail-card:hover {
-        transform: translateY(-5px);
-      }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1" fill="%23D4B896" opacity="0.3"/><circle cx="75" cy="75" r="1" fill="%238B5A3C" opacity="0.2"/><circle cx="50" cy="10" r="0.5" fill="%23D4B896" opacity="0.4"/></svg>');
+      animation: float 20s infinite linear;
+      z-index: 2;
+    }
 
-      .detail-card h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-      }
+    /* Hero Content */
+    .hero-content {
+      text-align: center;
+      z-index: 3;
+      animation: fadeInUp 1s ease-out;
+      position: relative;
+      padding: 3rem;
+      border-radius: 20px;
+    }
 
-      .guest-info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1rem;
-        margin-top: 3rem;
-      }
+    .hero h1 {
+      font-family: "Alex Brush", cursive;
+      font-size: 6.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgb(99 78 44 / 72%);
+      letter-spacing: -2px;
+      margin-top: 150px;
+    }
 
-      .info-card {
-        background: var(--white);
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: var(--shadow);
-        text-align: center;
-        transition: transform 0.3s ease;
-        border-left: 4px solid #5b3f1d36;
-      }
+    .hero .ampersand {
+      font-size: 7.5rem;
+      color: #e2c19b;
+      margin: 0 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
 
-      .info-card:hover {
-        transform: translateY(-5px);
-      }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
 
-      .info-card h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.4rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-      }
+    .hero-date {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      font-weight: 300;
+      color: #ffffff;
+      letter-spacing: 4px;
+    }
 
-      .info-card p {
-        color: var(--text-light);
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
+    /* Sections */
+    .section {
+      padding: 5rem 5%;
+      max-width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-      .color-palette {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1rem 0;
-      }
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 0 auto 1em;
+      color: #5b3f1d;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      border-top: 1px dashed #5b3f1d;
+      display: table;
+    }
 
-      .color-swatch {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 3px solid var(--white);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
+    /* Our Story Section */
+    #story h2.section-title.fade-in.visible {
+      background: url(images/1.png);
+      background-size: 500px;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      height: 180px;
+      margin-bottom: inherit;
+      color: #5b3f1d;
+    }
 
-      .color-swatch:hover {
-        transform: scale(1.1);
-      }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
 
-      .contact-methods {
-        margin: 1rem 0;
-      }
+    .story-text {
+      max-width: 600px;
+      margin: 2rem auto 0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
 
-      .contact-methods a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 500;
-      }
+    .story-image {
+      width: 100%;
+      height: 400px;
+      background-image: url(images/our-love-story.jpg);
+      background-size: cover;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.2rem;
+      text-indent: -10000px;
+      background-position: center;
+    }
 
-      .contact-methods a:hover {
-        text-decoration: underline;
-      }
+    /* Details Section */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
 
-      .couple-names {
-        font-family: "Playfair Display", serif;
-        font-size: 1.1rem;
-        color: var(--primary-color);
-        font-weight: 500;
-        margin-top: 1.5rem;
-      }
+    .detail-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-      /* =====================================
+    .detail-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .detail-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .guest-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .info-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease;
+      border-left: 4px solid #5b3f1d36;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .info-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .color-palette {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .color-swatch {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid var(--white);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.1);
+    }
+
+    .contact-methods {
+      margin: 1rem 0;
+    }
+
+    .contact-methods a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-methods a:hover {
+      text-decoration: underline;
+    }
+
+    .couple-names {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 500;
+      margin-top: 1.5rem;
+    }
+
+    /* =====================================
            New Gallery Section
       ===================================== */
 
-      .new-gallery {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: auto;
-        grid-auto-flow: dense;
-        gap: 6px;
-      }
+    .new-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
+      grid-auto-flow: dense;
+      gap: 6px;
+    }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-position: center;
-        object-fit: cover;
-      }
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
 
-      img.four-grid-cells {
-        grid-row: span 2 / auto;
-        grid-column: span 2 / auto;
-      }
+    img.four-grid-cells {
+      grid-row: span 2 / auto;
+      grid-column: span 2 / auto;
+    }
 
-      img.wide-image {
-        grid-column: span 2 / auto;
-      }
+    img.wide-image {
+      grid-column: span 2 / auto;
+    }
 
-      /* =====================================
+    /* =====================================
            Gallery Section
       ===================================== */
-      .gallery {
-        background: #ffffff;
+    .gallery {
+      background: #ffffff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      /* These two properties center and scale the image to fit the container */
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      height: 250px;
+      /* Uniform height for all items */
+      transition: background-image 1s ease-in-out, transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /*gallery image label*/
+    .gallery-item span {
+      color: #fff;
+      /* Increased the opacity to make the text more readable */
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 12px 12px;
+      width: 100%;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .story-text {
+      max-width: 600px;
+      margin: 2rem auto 0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    .footer {
+      background: var(--text-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Countdown Styles */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 6.5rem 0 0 0;
+      border-radius: 15px;
+      background: rgb(91 63 29 / 90%);
+      background-image: url(images/accent1.png);
+      height: 200px;
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+
+    .countdown-item {
+      text-align: center;
+    }
+
+    .countdown-number {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #d3b5b5;
+      display: block;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown-done {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #d3b5b5;
+      /* display: block; */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown-label {
+      font-size: 0.9rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      font-weight: 500;
+    }
+
+    section#details,
+    section#guest-info,
+    section#invitation-info,
+    section#rsvp {
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+
+    section#details {
+      background-color: #f5f2ef;
+    }
+
+    section#gallery {
+      background-image: url(images/bk2.png);
+      background-size: 500px;
+      background-repeat: repeat;
+      background-position: top center;
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+
+    #gallery h2.section-title.fade-in.visible {
+      background: url(images/border4.png);
+      background-size: 500px;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      height: 180px;
+      margin-bottom: inherit;
+      color: #5b3f1d;
+    }
+
+    #guest-info h2.section-title.fade-in.visible {
+      background: url(images/border4.png);
+      background-size: 500px;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      height: 180px;
+      margin-bottom: inherit;
+      color: #5b3f1d;
+    }
+
+    #invitation-info h2.section-title.fade-in.visible {
+      background: url(images/border4.png);
+      background-size: 500px;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      height: 180px;
+      margin-bottom: inherit;
+      color: #5b3f1d;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
       }
 
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-        max-width: 1400px;
-        margin: 2rem auto;
-        padding: 1rem;
+      to {
+        opacity: 1
       }
+    }
 
-      .gallery-item {
-        position: relative;
-        /* These two properties center and scale the image to fit the container */
-        background-size: cover;
-        background-position: center;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        height: 250px; /* Uniform height for all items */
-        transition: background-image 1s ease-in-out, transform 0.3s ease-in-out,
-          box-shadow 0.3s ease-in-out;
-        cursor: pointer;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-      }
+    #rsvp h2.section-title.fade-in.visible {
+      background: url(images/border6.png);
+      background-size: 500px;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      height: 180px;
+      margin-bottom: inherit;
+      color: #5b3f1d;
+    }
 
-      .gallery-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      }
+    #details h2.section-title.fade-in.visible {
+      background: url(images/border3.png);
+      background-size: 500px;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      height: 180px;
+      margin-bottom: inherit;
+      color: #5b3f1d;
+    }
 
-      /*gallery image label*/
-      .gallery-item span {
-        color: #fff;
-        /* Increased the opacity to make the text more readable */
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 0.5rem 1rem;
-        border-radius: 0 0 12px 12px;
-        width: 100%;
-        text-align: center;
-        font-weight: 600;
-      }
-
-      .story-text {
-        max-width: 600px;
-        margin: 2rem auto 0;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-light);
-      }
-
-      .footer {
-        background: var(--text-dark);
-        color: var(--white);
-        text-align: center;
-        padding: 2rem;
-      }
-
-      /* Countdown Styles */
-      .countdown {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 2rem 0;
-        padding: 6.5rem 0 0 0;
-        border-radius: 15px;
-        background: rgb(91 63 29 / 90%);
-        background-image: url(images/accent1.png);
-        height: 200px;
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: center top;
-      }
-
-      .countdown-item {
-        text-align: center;
-      }
-      .countdown-number {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        font-weight: 700;
-        color: #d3b5b5;
-        display: block;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-      }
-      .countdown-done {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        font-weight: 700;
-        color: #d3b5b5;
-        /* display: block; */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-      }
-      .countdown-label {
-        font-size: 0.9rem;
-        color: #ffffff;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        font-weight: 500;
-      }
-
-      section#details,
-      section#guest-info,
-      section#rsvp {
-        padding-top: 140px;
-        padding-bottom: 140px;
-      }
-
-      section#details {
-        background-color: #f5f2ef;
-      }
-
-      section#gallery {
-        background-image: url(images/bk2.png);
-        background-size: 500px;
-        background-repeat: repeat;
-        background-position: top center;
-        padding-top: 140px;
-        padding-bottom: 140px;
-      }
-
-      #gallery h2.section-title.fade-in.visible {
-        background: url(images/border4.png);
-        background-size: 500px;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        height: 180px;
-        margin-bottom: inherit;
-        color: #5b3f1d;
-      }
-
-      #guest-info h2.section-title.fade-in.visible {
-        background: url(images/border4.png);
-        background-size: 500px;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        height: 180px;
-        margin-bottom: inherit;
-        color: #5b3f1d;
-      }
-
-      #rsvp h2.section-title.fade-in.visible {
-        background: url(images/border6.png);
-        background-size: 500px;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        height: 180px;
-        margin-bottom: inherit;
-        color: #5b3f1d;
-      }
-
-      #details h2.section-title.fade-in.visible {
-        background: url(images/border3.png);
-        background-size: 500px;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        height: 180px;
-        margin-bottom: inherit;
-        color: #5b3f1d;
-      }
-
-      /* Fade In Animation */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .fade-in {
+    /* Fade In Animation */
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
         transform: translateY(30px);
-        transition: all 0.6s ease;
       }
-      .fade-in.visible {
+
+      to {
         opacity: 1;
         transform: translateY(0);
       }
+    }
 
-      /* Mobile Styles */
-      @media (max-width: 768px) {
-        .music-player {
-          bottom: 10px;
-          right: 10px;
-          padding: 8px 12px;
-        }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
 
-        .music-toggle {
-          width: 30px;
-          height: 30px;
-          font-size: 16px;
-        }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        .hero-content {
-          padding: 2rem 1rem;
-          margin: 0 1rem;
-        }
-
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero .ampersand {
-          font-size: 2rem;
-          margin: 0 0.5rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .hero-date {
-          font-size: 1.3rem;
-        }
-
-        .story-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .nav-links {
-          position: fixed;
-          top: 70px;
-          left: 0;
-          width: 100%;
-          background: white;
-          flex-direction: column;
-          padding: 2rem;
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-links.active {
-          transform: translateX(0);
-        }
-
-        .nav-links a {
-          color: #5b3f1d;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-          color: #fff;
-        }
-
-        .countdown {
-          gap: 1rem;
-          flex-wrap: wrap;
-          padding: 1rem;
-          margin: 1.5rem 0;
-          height: 100px;
-          background-image: none;
-        }
-
-        .countdown-number {
-          font-size: 1.5rem;
-        }
-
-        .countdown-label {
-          font-size: 0.8rem;
-        }
-
-        .section {
-          padding: 3rem 1rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .details-grid,
-        .guest-info-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .color-palette {
-          gap: 0.5rem;
-        }
-
-        .color-swatch {
-          width: 40px;
-          height: 40px;
-        }
-
-        .detail-card,
-        .info-card {
-          padding: 1.5rem;
-        }
-
-        .rsvp-form {
-          padding: 0 1rem;
-        }
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .music-player {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
       }
 
-      @media (max-width: 480px) {
-        .hero-content {
-          padding: 1.5rem 0.75rem;
-        }
-
-        .hero h1 {
-          font-size: 2rem;
-          line-height: 1.2;
-        }
-
-        .hero .ampersand {
-          font-size: 1.5rem;
-          margin: 0 0.25rem;
-        }
-
-        .hero-subtitle {
-          font-size: 0.9rem;
-        }
-
-        .hero-date {
-          font-size: 1.1rem;
-        }
-
-        .countdown {
-          gap: 0.5rem;
-          padding: 0.75rem;
-
-          height: 100px;
-          background-image: none;
-        }
-
-        .countdown-item {
-          flex: 1;
-          min-width: 70px;
-        }
-
-        .countdown-number {
-          font-size: 1.2rem;
-        }
-
-        .countdown-label {
-          font-size: 0.7rem;
-        }
-
-        .section-title {
-          font-size: 1.75rem;
-        }
-
-        .logo {
-          font-size: 1.3rem;
-        }
-
-        .nav {
-          padding: 0 1rem;
-        }
+      .music-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
       }
-    </style>
-  </head>
 
-  <body data-new-gr-c-s-check-loaded="14.1112.0" data-gr-ext-installed="">
-    <!-- Music Player -->
-    <div class="music-player" id="musicPlayer">
-      <button class="music-toggle" id="musicToggle" title="Play/Pause Music">
-        🎵
-      </button>
-      <div class="music-info">
-        <div style="font-weight: 500">Canon in D</div>
-        <div style="opacity: 0.8">Pachelbel - Piano</div>
-      </div>
+      .hero-content {
+        padding: 2rem 1rem;
+        margin: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .ampersand {
+        font-size: 2rem;
+        margin: 0 0.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-date {
+        font-size: 1.3rem;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+        color: #5b3f1d;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+        color: #fff;
+      }
+
+      .countdown {
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        height: 100px;
+        background-image: none;
+      }
+
+      .countdown-number {
+        font-size: 1.5rem;
+      }
+
+      .countdown-label {
+        font-size: 0.8rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .details-grid,
+      .guest-info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .color-palette {
+        gap: 0.5rem;
+      }
+
+      .color-swatch {
+        width: 40px;
+        height: 40px;
+      }
+
+      .detail-card,
+      .info-card {
+        padding: 1.5rem;
+      }
+
+      .rsvp-form {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      .hero .ampersand {
+        font-size: 1.5rem;
+        margin: 0 0.25rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+
+      .hero-date {
+        font-size: 1.1rem;
+      }
+
+      .countdown {
+        gap: 0.5rem;
+        padding: 0.75rem;
+
+        height: 100px;
+        background-image: none;
+      }
+
+      .countdown-item {
+        flex: 1;
+        min-width: 70px;
+      }
+
+      .countdown-number {
+        font-size: 1.2rem;
+      }
+
+      .countdown-label {
+        font-size: 0.7rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .nav {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1112.0" data-gr-ext-installed="">
+  <!-- Music Player -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-toggle" id="musicToggle" title="Play/Pause Music">
+      🎵
+    </button>
+    <div class="music-info">
+      <div style="font-weight: 500">Canon in D</div>
+      <div style="opacity: 0.8">Pachelbel - Piano</div>
     </div>
+  </div>
 
-    <!-- Wedding Music Audio - Free Public Domain Songs -->
-    <audio id="weddingMusic" loop preload="auto">
-      <!-- Option 1: Canon in D - Beautiful classical wedding piece -->
-      <source src="music/canon-in-d.mp3" type="audio/mpeg" />
-      <source src="music/canon-in-d.ogg" type="audio/ogg" />
+  <!-- Wedding Music Audio - Free Public Domain Songs -->
+  <audio id="weddingMusic" loop preload="auto">
+    <!-- Option 1: Canon in D - Beautiful classical wedding piece -->
+    <source src="music/canon-in-d.mp3" type="audio/mpeg" />
+    <source src="music/canon-in-d.ogg" type="audio/ogg" />
 
-      <!-- Option 2: Ave Maria - Classic wedding song -->
-      <!-- <source src="music/ave-maria.mp3" type="audio/mpeg"> -->
+    <!-- Option 2: Ave Maria - Classic wedding song -->
+    <!-- <source src="music/ave-maria.mp3" type="audio/mpeg"> -->
 
-      <!-- Option 3: Wedding March (Mendelssohn) -->
-      <!-- <source src="music/wedding-march.mp3" type="audio/mpeg"> -->
+    <!-- Option 3: Wedding March (Mendelssohn) -->
+    <!-- <source src="music/wedding-march.mp3" type="audio/mpeg"> -->
 
-      <!-- Fallback to gentle piano melody -->
-    </audio>
+    <!-- Fallback to gentle piano melody -->
+  </audio>
 
-    <header
-      class="header"
-      style="
+  <header class="header" style="
         background: rgb(91, 63, 29);
         box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 20px;
-      "
-    >
-      <nav class="nav">
-        <div class="logo">A &amp; Y</div>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#story">Our Story</a></li>
-          <li><a href="#details">Details</a></li>
-          <li><a href="#guest-info">Guest Info</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#rsvp">RSVP</a></li>
-        </ul>
-        <button
-          class="mobile-menu-btn"
-          id="mobileMenuBtn"
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
-      </nav>
-    </header>
+      ">
+    <nav class="nav">
+      <div class="logo">A &amp; Y</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#guest-info">Guest Info</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#invitation-info">Invitation</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        ☰
+      </button>
+    </nav>
+  </header>
 
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Alfred <span class="ampersand">&amp;</span> Yvette</h1>
-        <p class="hero-subtitle">
-          Together with our families, we invite you to celebrate our love
-        </p>
-        <div class="countdown countdown-done" id="countdown-timer">
-          <div class="countdown-item">
-            <span class="countdown-number" id="countdown-days">--</span>
-            <span class="countdown-label">Days</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="countdown-hours">--</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="countdown-minutes">--</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="countdown-seconds">--</span>
-            <span class="countdown-label">Seconds</span>
-          </div>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Alfred <span class="ampersand">&amp;</span> Yvette</h1>
+      <p class="hero-subtitle">
+        Together with our families, we invite you to celebrate our love
+      </p>
+      <div class="countdown countdown-done" id="countdown-timer">
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-days">--</span>
+          <span class="countdown-label">Days</span>
         </div>
-        <p class="hero-date">22 November 2025</p>
-      </div>
-    </section>
-
-    <section id="story" class="section">
-      <h2 class="section-title fade-in visible">Our Love Story</h2>
-      <div class="story-grid fade-in">
-        <div class="story-text">
-          <p>
-            It all started with a simple swipe right and a shared love for
-            cheesy puns. We found our forever in each other's laughter and are
-            so excited to celebrate our love with you. From late-night talks to
-            spontaneous road trips, our journey has been an adventure, and we
-            can't wait to see what the future holds.
-          </p>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-hours">--</span>
+          <span class="countdown-label">Hours</span>
         </div>
-        <div class="story-image">Photo Coming Soon</div>
-      </div>
-    </section>
-
-    <section id="details" class="section">
-      <h2 class="section-title fade-in">Wedding Details</h2>
-      <div class="details-grid">
-        <div class="detail-card fade-in">
-          <h3>Ceremony</h3>
-          <p><strong>2:30 PM</strong></p>
-          <p>Saint Ferdinand Cathedral Parish</p>
-          <p>Brgy. 5 (Poblacion) Quezon Ave.<br />Lucena City</p>
-          <br />
-          <p>Join us as we exchange vows in this beautiful historic venue.</p>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-minutes">--</span>
+          <span class="countdown-label">Minutes</span>
         </div>
-        <div class="detail-card fade-in">
-          <h3>Reception</h3>
-          <p><strong>4:00 PM</strong></p>
-          <p>Cerca del Rio Pavilion and Restaurant</p>
-          <p>
-            2437 Purok Sariling Atin, Brgy. Gulang-Gulang<br />Lucena City,
-            Quezon
-          </p>
-          <br />
-          <p>Dinner, dancing, and celebration await!</p>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-seconds">--</span>
+          <span class="countdown-label">Seconds</span>
         </div>
       </div>
-    </section>
+      <p class="hero-date">22 November 2025</p>
+    </div>
+  </section>
 
-    <section id="guest-info" class="section">
-      <h2 class="section-title fade-in">Guest Information</h2>
-
-      <div class="guest-info-grid">
-        <div class="info-card fade-in">
-          <h3>A Note on Gifts</h3>
-          <p>
-            Please do not feel obliged to give us a gift. Your presence at our
-            wedding is more than enough.
-          </p>
-          <p>
-            However, if you wish to give us something, a monetary gift would be
-            greatly appreciated.
-          </p>
-        </div>
-
-        <div class="info-card fade-in">
-          <h3>Dress Code</h3>
-          <!-- <p><strong>Cokctail Attire</strong></p> -->
-          <p>
-            We kindly encourage our guests to wear
-            <strong>semi-formal attire</strong> with these colors on our special
-            day:
-          </p>
-          <div class="color-palette">
-            <div
-              class="color-swatch"
-              style="background: #f2766c"
-              title="Coral"
-            ></div>
-            <div
-              class="color-swatch"
-              style="background: #f9b4a5"
-              title="Peach"
-            ></div>
-            <div
-              class="color-swatch"
-              style="background: #f59b90"
-              title="Dusty Rose"
-            ></div>
-          </div>
-          <p><em>Peach Tone Colors</em></p>
-        </div>
-
-        <div class="info-card fade-in">
-          <h3>Your Reservation</h3>
-          <p>We'd be honored to have you celebrate with us.</p>
-          <p>
-            Please let us know if you can make it by
-            <strong>October 15, 2025</strong>.
-          </p>
-        </div>
-
-        <div class="info-card fade-in">
-          <h3>Contact Us</h3>
-          <p>For any questions or special requests:</p>
-          <div class="contact-methods">
-            <p>📱 <a href="tel:+639959049802">0995-904-9802</a></p>
-            <p>📱 <a href="tel:+639985566272">0998-556-6272</a></p>
-            <p>💬 Message us via FB Messenger</p>
-          </div>
-          <p class="couple-names">
-            <strong
-              ><em
-                >Yvette Bondoc <br />&amp; <br />Alfredo Salumbides Jr</em
-              ></strong
-            >
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section gallery">
-      <h2 class="section-title fade-in">Our Memories</h2>
+  <section id="story" class="section">
+    <h2 class="section-title fade-in visible">Our Love Story</h2>
+    <div class="story-grid fade-in">
       <div class="story-text">
         <p>
-          From our first hello to the moment we said "yes," our love story has
-          been a beautiful journey filled with laughter, adventure, and endless
-          love. We are so excited to begin our next chapter and can't wait to
-          share this special day with all of our loved ones.
+          It all started with a simple swipe right and a shared love for
+          cheesy puns. We found our forever in each other's laughter and are
+          so excited to celebrate our love with you. From late-night talks to
+          spontaneous road trips, our journey has been an adventure, and we
+          can't wait to see what the future holds.
+        </p>
+      </div>
+      <div class="story-image">Photo Coming Soon</div>
+    </div>
+  </section>
+
+  <section id="details" class="section">
+    <h2 class="section-title fade-in">Wedding Details</h2>
+    <div class="details-grid">
+      <div class="detail-card fade-in">
+        <h3>Ceremony</h3>
+        <p><strong>2:30 PM</strong></p>
+        <p>Saint Ferdinand Cathedral Parish</p>
+        <p>Brgy. 5 (Poblacion) Quezon Ave.<br />Lucena City</p>
+        <br />
+        <p>Join us as we exchange vows in this beautiful historic venue.</p>
+      </div>
+      <div class="detail-card fade-in">
+        <h3>Reception</h3>
+        <p><strong>4:00 PM</strong></p>
+        <p>Cerca del Rio Pavilion and Restaurant</p>
+        <p>
+          2437 Purok Sariling Atin, Brgy. Gulang-Gulang<br />Lucena City,
+          Quezon
         </p>
         <br />
+        <p>Dinner, dancing, and celebration await!</p>
       </div>
-      <div class="new-gallery">
-        <img class="four-grid-cells" src="images\gallery-grid\GG1.webp" />
-        <img src="images\gallery-grid\GG2.webp" />
-        <img class="wide-image" src="images\gallery-grid\GG3.webp" />
-        <img src="images\gallery-grid\GG4.webp" />
-        <img src="images\gallery-grid\GG5.webp" />
-        <img class="wide-image" src="images\gallery-grid\GG6.webp" />
-        <img src="images\gallery-grid\GG7.webp" />
-        <img class="wide-image" src="images\gallery-grid\GG8.webp" />
-        <img class="wide-image" src="images\gallery-grid\GG9.webp" />
-        <img src="images\gallery-grid\GG10.webp" />
-        <img src="images\gallery-grid\GG11.webp" />
-        <img class="wide-image" src="images\gallery-grid\GG12.webp" />
-        <img class="wide-image" src="images\gallery-grid\GG13.webp" />
-        <img src="images\gallery-grid\GG14.webp" />
-        <img src="images\gallery-grid\GG15.webp" />
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="rsvp" class="section">
-      <h2 class="section-title fade-in">RSVP</h2>
-      <p
-        style="
+  <section id="guest-info" class="section">
+    <h2 class="section-title fade-in">Guest Information</h2>
+
+    <div class="guest-info-grid">
+      <div class="info-card fade-in">
+        <h3>A Note on Gifts</h3>
+        <p>
+          Please do not feel obliged to give us a gift. Your presence at our
+          wedding is more than enough.
+        </p>
+        <p>
+          However, if you wish to give us something, a monetary gift would be
+          greatly appreciated.
+        </p>
+      </div>
+
+      <div class="info-card fade-in">
+        <h3>Dress Code</h3>
+        <!-- <p><strong>Cokctail Attire</strong></p> -->
+        <p>
+          We kindly encourage our guests to wear
+          <strong>semi-formal attire</strong> with these colors on our special
+          day:
+        </p>
+        <div class="color-palette">
+          <div class="color-swatch" style="background: #f2766c" title="Coral"></div>
+          <div class="color-swatch" style="background: #f9b4a5" title="Peach"></div>
+          <div class="color-swatch" style="background: #f59b90" title="Dusty Rose"></div>
+        </div>
+        <p><em>Peach Tone Colors</em></p>
+      </div>
+
+      <div class="info-card fade-in">
+        <h3>Your Reservation</h3>
+        <p>We'd be honored to have you celebrate with us.</p>
+        <p>
+          Please let us know if you can make it by
+          <strong>October 15, 2025</strong>.
+        </p>
+      </div>
+
+      <div class="info-card fade-in">
+        <h3>Contact Us</h3>
+        <p>For any questions or special requests:</p>
+        <div class="contact-methods">
+          <p>📱 <a href="tel:+639959049802">0995-904-9802</a></p>
+          <p>📱 <a href="tel:+639985566272">0998-556-6272</a></p>
+          <p>💬 Message us via FB Messenger</p>
+        </div>
+        <p class="couple-names">
+          <strong><em>Yvette Bondoc <br />&amp; <br />Alfredo Salumbides Jr</em></strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery">
+    <h2 class="section-title fade-in">Our Memories</h2>
+    <div class="story-text">
+      <p>
+        From our first hello to the moment we said "yes," our love story has
+        been a beautiful journey filled with laughter, adventure, and endless
+        love. We are so excited to begin our next chapter and can't wait to
+        share this special day with all of our loved ones.
+      </p>
+      <br />
+    </div>
+    <div class="new-gallery">
+      <img class="four-grid-cells" src="images\gallery-grid\GG1.webp" />
+      <img src="images\gallery-grid\GG2.webp" />
+      <img class="wide-image" src="images\gallery-grid\GG3.webp" />
+      <img src="images\gallery-grid\GG4.webp" />
+      <img src="images\gallery-grid\GG5.webp" />
+      <img class="wide-image" src="images\gallery-grid\GG6.webp" />
+      <img src="images\gallery-grid\GG7.webp" />
+      <img class="wide-image" src="images\gallery-grid\GG8.webp" />
+      <img class="wide-image" src="images\gallery-grid\GG9.webp" />
+      <img src="images\gallery-grid\GG10.webp" />
+      <img src="images\gallery-grid\GG11.webp" />
+      <img class="wide-image" src="images\gallery-grid\GG12.webp" />
+      <img class="wide-image" src="images\gallery-grid\GG13.webp" />
+      <img src="images\gallery-grid\GG14.webp" />
+      <img src="images\gallery-grid\GG15.webp" />
+    </div>
+  </section>
+
+  <section id="invitation-info" class="section">
+    <h2 class="section-title fade-in">Invitation</h2>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="images\invitation\1.svg" style="width:100%; height:auto; max-width:600px; margin:0 auto; display:block;">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="images\invitation\2.svg" style="width:100%; height:auto; max-width:600px; margin:0 auto; display:block;">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="images\invitation\3.svg" style="width:100%; height:auto; max-width:600px; margin:0 auto; display:block;">
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </section>
+
+  <section id="rsvp" class="section">
+    <h2 class="section-title fade-in">RSVP</h2>
+    <p style="
           text-align: center;
           color: var(--text-light);
           margin-bottom: 2rem;
-        "
-        class="fade-in"
-      >
-        <strong>Please respond by October 15, 2025</strong>
-      </p>
-      <div style="max-width: auto; margin: 0 auto">
-        <iframe
-          src="https://forms.gle/diTNshv417DpYru8A"
-          width="100%"
-          height="1200"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          style="
+        " class="fade-in">
+      <strong>Please respond by October 15, 2025</strong>
+    </p>
+    <div style="max-width: auto; margin: 0 auto">
+      <iframe src="https://forms.gle/diTNshv417DpYru8A" width="100%" height="1200" frameborder="0" marginheight="0"
+        marginwidth="0" style="
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-          "
-          allowfullscreen
-          >Loading…</iframe
-        >
-      </div>
-      <!-- <form class="rsvp-form fade-in" id="rsvpForm">
+          " allowfullscreen>Loading…</iframe>
+    </div>
+    <!-- <form class="rsvp-form fade-in" id="rsvpForm">
             <div class="form-group">
                 <label for="name">Full Name(s) *</label>
                 <input type="text" id="name" name="name" required="">
@@ -1089,7 +1209,7 @@
             </div>
         </form> -->
 
-      <!--        <div class="email-note fade-in">
+    <!--        <div class="email-note fade-in">
             <strong>📧 Email Setup Required:</strong><br>
             To enable email functionality, you'll need to:
             <ol style="margin: 0.5rem 0; padding-left: 1.5rem;">
@@ -1099,9 +1219,9 @@
             </ol>
             Alternative options: Formspree, Netlify Forms, or Google Forms integration.
         </div> -->
-    </section>
+  </section>
 
-    <!-- <section class="section" id="google-form" style="padding-top: 60px; padding-bottom: 60px;">
+  <!-- <section class="section" id="google-form" style="padding-top: 60px; padding-bottom: 60px;">
         <h2 class="section-title fade-in">Alternate RSVP Form</h2>
         <div style="max-width: 700px; margin: 0 auto;">
             <iframe 
@@ -1117,268 +1237,300 @@
         </div>
     </section> -->
 
-    <footer class="footer">
-      <p>© 2025 Alfred &amp; Yvette. Made with ❤️ for our special day.</p>
-    </footer>
+  <footer class="footer">
+    <p>© 2025 Alfred &amp; Yvette. Made with ❤️ for our special day.</p>
+  </footer>
 
-    <!-- EmailJS SDK -->
-    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script> -->
+  <!-- EmailJS SDK -->
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script> -->
 
-    <script>
-      // Music Player Functionality
-      let isPlaying = false;
-      const musicToggle = document.getElementById("musicToggle");
-      const musicPlayer = document.getElementById("musicPlayer");
-      const weddingMusic = document.getElementById("weddingMusic");
+  <script>
+    // Music Player Functionality
+    let isPlaying = false;
+    const musicToggle = document.getElementById("musicToggle");
+    const musicPlayer = document.getElementById("musicPlayer");
+    const weddingMusic = document.getElementById("weddingMusic");
 
-      // Create a gentle wedding melody using Web Audio API as fallback
-      // For "Grow Old With You" - see instructions below for legal MIDI integration
-      let audioContext;
-      let oscillator;
-      let gainNode;
+    // Create a gentle wedding melody using Web Audio API as fallback
+    // For "Grow Old With You" - see instructions below for legal MIDI integration
+    let audioContext;
+    let oscillator;
+    let gainNode;
 
-      function createWeddingMelody() {
-        try {
-          audioContext = new (window.AudioContext ||
-            window.webkitAudioContext)();
-          gainNode = audioContext.createGain();
-          gainNode.connect(audioContext.destination);
-          gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+    function createWeddingMelody() {
+      try {
+        audioContext = new (window.AudioContext ||
+          window.webkitAudioContext)();
+        gainNode = audioContext.createGain();
+        gainNode.connect(audioContext.destination);
+        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
 
-          // Create Canon in D inspired melody (simplified)
-          const canonMelody = [
-            587.33, // D5
-            523.25, // C5
-            587.33, // D5
-            659.25, // E5
-            698.46, // F#5
-            659.25, // E5
-            587.33, // D5
-            523.25, // C5
-            587.33, // D5
-            698.46, // F#5
-            783.99, // G5
-            698.46, // F#5
-            659.25, // E5
-            587.33, // D5
-          ];
-          let currentIndex = 0;
-
-          function playNote() {
-            if (oscillator) {
-              oscillator.stop();
-            }
-
-            oscillator = audioContext.createOscillator();
-            oscillator.connect(gainNode);
-            oscillator.type = "sine"; // Soft piano-like tone
-            oscillator.frequency.setValueAtTime(
-              canonMelody[currentIndex],
-              audioContext.currentTime
-            );
-
-            // Gentle fade in and out for piano-like attack
-            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-            gainNode.gain.linearRampToValueAtTime(
-              0.04,
-              audioContext.currentTime + 0.1
-            );
-            gainNode.gain.exponentialRampToValueAtTime(
-              0.001,
-              audioContext.currentTime + 2
-            );
-
-            oscillator.start();
-            oscillator.stop(audioContext.currentTime + 2);
-
-            currentIndex = (currentIndex + 1) % canonMelody.length;
-
-            if (isPlaying) {
-              setTimeout(playNote, 1800); // Slower, more romantic tempo
-            }
-          }
-
-          if (isPlaying) {
-            playNote();
-          }
-        } catch (error) {
-          console.log("Web Audio API not supported");
-        }
-      }
-
-      musicToggle.addEventListener("click", function () {
-        if (!isPlaying) {
-          // Try to play the audio file first
-          weddingMusic.volume = 0.3;
-          const playPromise = weddingMusic.play();
-
-          if (playPromise !== undefined) {
-            playPromise
-              .then(() => {
-                isPlaying = true;
-                musicToggle.textContent = "🎵";
-                musicToggle.title = "Pause Music";
-                musicPlayer.classList.add("expanded");
-              })
-              .catch(() => {
-                // If audio file fails, use Web Audio API
-                isPlaying = true;
-                createWeddingMelody();
-                musicToggle.textContent = "🎵";
-                musicToggle.title = "Pause Music";
-                musicPlayer.classList.add("expanded");
-              });
-          }
-        } else {
-          // Pause music
-          weddingMusic.pause();
-          if (audioContext) {
-            audioContext.close();
-          }
-          isPlaying = false;
-          musicToggle.textContent = "🎵";
-          musicToggle.title = "Play Music";
-          musicPlayer.classList.remove("expanded");
-        }
-      });
-
-      // Auto-play music with user interaction
-      document.addEventListener(
-        "click",
-        function autoPlay() {
-          if (!isPlaying) {
-            musicToggle.click();
-          }
-          document.removeEventListener("click", autoPlay);
-        },
-        { once: true }
-      );
-
-      // Mobile menu functionality
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const navLinks = document.getElementById("navLinks");
-
-      mobileMenuBtn.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-        this.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
-      });
-
-      // Close mobile menu when clicking on links
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", function () {
-          navLinks.classList.remove("active");
-          mobileMenuBtn.textContent = "☰";
-        });
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-
-      // Fade in animation on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll(".fade-in").forEach((el) => {
-        observer.observe(el);
-      });
-
-      // =====================================
-      // Countdown Timer Logic
-      // =====================================
-      const weddingDate = new Date("November 22, 2025 14:30:00").getTime();
-      const countdownInterval = setInterval(function () {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown-days").innerHTML = days
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("countdown-hours").innerHTML = hours
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("countdown-minutes").innerHTML = minutes
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("countdown-seconds").innerHTML = seconds
-          .toString()
-          .padStart(2, "0");
-
-        if (distance < 0) {
-          clearInterval(countdownInterval);
-          document.getElementById("countdown-timer").innerHTML =
-            "We are now married!";
-        }
-      }, 1000);
-
-      // =====================================
-      // Gallery Slideshow Logic
-      // =====================================
-      const galleryItems = document.querySelectorAll(".gallery-item");
-
-      galleryItems.forEach((item) => {
-        const images = item.getAttribute("data-images").split(",");
+        // Create Canon in D inspired melody (simplified)
+        const canonMelody = [
+          587.33, // D5
+          523.25, // C5
+          587.33, // D5
+          659.25, // E5
+          698.46, // F#5
+          659.25, // E5
+          587.33, // D5
+          523.25, // C5
+          587.33, // D5
+          698.46, // F#5
+          783.99, // G5
+          698.46, // F#5
+          659.25, // E5
+          587.33, // D5
+        ];
         let currentIndex = 0;
 
-        // Set initial background image
+        function playNote() {
+          if (oscillator) {
+            oscillator.stop();
+          }
+
+          oscillator = audioContext.createOscillator();
+          oscillator.connect(gainNode);
+          oscillator.type = "sine"; // Soft piano-like tone
+          oscillator.frequency.setValueAtTime(
+            canonMelody[currentIndex],
+            audioContext.currentTime
+          );
+
+          // Gentle fade in and out for piano-like attack
+          gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+          gainNode.gain.linearRampToValueAtTime(
+            0.04,
+            audioContext.currentTime + 0.1
+          );
+          gainNode.gain.exponentialRampToValueAtTime(
+            0.001,
+            audioContext.currentTime + 2
+          );
+
+          oscillator.start();
+          oscillator.stop(audioContext.currentTime + 2);
+
+          currentIndex = (currentIndex + 1) % canonMelody.length;
+
+          if (isPlaying) {
+            setTimeout(playNote, 1800); // Slower, more romantic tempo
+          }
+        }
+
+        if (isPlaying) {
+          playNote();
+        }
+      } catch (error) {
+        console.log("Web Audio API not supported");
+      }
+    }
+
+    musicToggle.addEventListener("click", function () {
+      if (!isPlaying) {
+        // Try to play the audio file first
+        weddingMusic.volume = 0.3;
+        const playPromise = weddingMusic.play();
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              isPlaying = true;
+              musicToggle.textContent = "🎵";
+              musicToggle.title = "Pause Music";
+              musicPlayer.classList.add("expanded");
+            })
+            .catch(() => {
+              // If audio file fails, use Web Audio API
+              isPlaying = true;
+              createWeddingMelody();
+              musicToggle.textContent = "🎵";
+              musicToggle.title = "Pause Music";
+              musicPlayer.classList.add("expanded");
+            });
+        }
+      } else {
+        // Pause music
+        weddingMusic.pause();
+        if (audioContext) {
+          audioContext.close();
+        }
+        isPlaying = false;
+        musicToggle.textContent = "🎵";
+        musicToggle.title = "Play Music";
+        musicPlayer.classList.remove("expanded");
+      }
+    });
+
+    // Auto-play music with user interaction
+    document.addEventListener(
+      "click",
+      function autoPlay() {
+        if (!isPlaying) {
+          musicToggle.click();
+        }
+        document.removeEventListener("click", autoPlay);
+      },
+      { once: true }
+    );
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    mobileMenuBtn.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+      this.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+    });
+
+    // Close mobile menu when clicking on links
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        mobileMenuBtn.textContent = "☰";
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+
+    // Fade in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".fade-in").forEach((el) => {
+      observer.observe(el);
+    });
+
+    // =====================================
+    // Countdown Timer Logic
+    // =====================================
+    const weddingDate = new Date("November 22, 2025 14:30:00").getTime();
+    const countdownInterval = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown-days").innerHTML = days
+        .toString()
+        .padStart(2, "0");
+      document.getElementById("countdown-hours").innerHTML = hours
+        .toString()
+        .padStart(2, "0");
+      document.getElementById("countdown-minutes").innerHTML = minutes
+        .toString()
+        .padStart(2, "0");
+      document.getElementById("countdown-seconds").innerHTML = seconds
+        .toString()
+        .padStart(2, "0");
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown-timer").innerHTML =
+          "We are now married!";
+      }
+    }, 1000);
+
+    // =====================================
+    // Gallery Slideshow Logic
+    // =====================================
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    galleryItems.forEach((item) => {
+      const images = item.getAttribute("data-images").split(",");
+      let currentIndex = 0;
+
+      // Set initial background image
+      item.style.backgroundImage = `url(${images[currentIndex]})`;
+
+      // Start slideshow
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
         item.style.backgroundImage = `url(${images[currentIndex]})`;
+      }, 5000); // Change image every 3 seconds
+    });
 
-        // Start slideshow
-        setInterval(() => {
-          currentIndex = (currentIndex + 1) % images.length;
-          item.style.backgroundImage = `url(${images[currentIndex]})`;
-        }, 5000); // Change image every 3 seconds
-      });
+    // Header scroll effect
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector(".header");
+      if (window.scrollY > 100) {
+        header.style.background = "rgb(91 63 29 / 90%)";
+        header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
+      } else {
+        header.style.background = "transparent";
+        header.style.boxShadow = "none";
+      }
+    });
 
-      // Header scroll effect
-      window.addEventListener("scroll", () => {
-        const header = document.querySelector(".header");
-        if (window.scrollY > 100) {
-          header.style.background = "rgb(91 63 29 / 90%)";
-          header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
-        } else {
-          header.style.background = "transparent";
-          header.style.boxShadow = "none";
-        }
-      });
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (
+        !e.target.closest(".nav") &&
+        navLinks.classList.contains("active")
+      ) {
+        navLinks.classList.remove("active");
+        mobileMenuBtn.textContent = "☰";
+      }
+    });
 
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", function (e) {
-        if (
-          !e.target.closest(".nav") &&
-          navLinks.classList.contains("active")
-        ) {
-          navLinks.classList.remove("active");
-          mobileMenuBtn.textContent = "☰";
-        }
-      });
-    </script>
-  </body>
+    //invitation slider
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+  </script>
+</body>
+
 </html>
