@@ -1,6 +1,11 @@
 <html lang="en">
   <head>
-    <script async defer src="https://tianji.home-star.xyz/tracker.js" data-website-id="cmfusxdj40001qmar6r67y41r"></script>
+    <script
+      async
+      defer
+      src="https://tianji.home-star.xyz/tracker.js"
+      data-website-id="cmfusxdj40001qmar6r67y41r"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alfred &amp; Yvette - Our Wedding</title>
@@ -396,6 +401,33 @@
       }
 
       /* =====================================
+           New Gallery Section
+      ===================================== */
+
+      .new-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+        grid-auto-flow: dense;
+        gap: 6px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      img.four-grid-cells {
+        grid-row: span 2 / auto;
+        grid-column: span 2 / auto;
+      }
+
+      img.wide-image {
+        grid-column: span 2 / auto;
+      }
+
+      /* =====================================
            Gallery Section
       ===================================== */
       .gallery {
@@ -412,20 +444,21 @@
       }
 
       .gallery-item {
-            position: relative;
-            /* These two properties center and scale the image to fit the container */
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            height: 250px; /* Uniform height for all items */
-            transition: background-image 1s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            cursor: pointer;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-        }
+        position: relative;
+        /* These two properties center and scale the image to fit the container */
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        height: 250px; /* Uniform height for all items */
+        transition: background-image 1s ease-in-out, transform 0.3s ease-in-out,
+          box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
 
       .gallery-item:hover {
         transform: scale(1.05);
@@ -967,27 +1000,43 @@
           share this special day with all of our loved ones.
         </p>
       </div>
-      <div class="gallery-grid">
-        <div
-          class="gallery-item img"
-          data-images="images/gallery/01-dates/dates-01.webp, images/gallery/01-dates/dates-02.webp, images/gallery/01-dates/dates-03.webp, images/gallery/01-dates/dates-04.webp, images/gallery/01-dates/dates-05.webp, images/gallery/01-dates/dates-06.webp, images/gallery/01-dates/dates-07.webp, images/gallery/01-dates/dates-08.webp, images/gallery/01-dates/dates-09.webp, images/gallery/01-dates/dates-10.webp, images/gallery/01-dates/dates-11.webp, images/gallery/01-dates/dates-12.webp, images/gallery/01-dates/dates-13.webp, images/gallery/01-dates/dates-14.webp, images/gallery/01-dates/dates-15.webp, images/gallery/01-dates/dates-16.webp, images/gallery/01-dates/dates-17.webp, images/gallery/01-dates/dates-18.webp , images/gallery/01-dates/dates-19.webp, images/gallery/01-dates/dates-20.webp , images/gallery/01-dates/dates-21.webp, images/gallery/01-dates/dates-22.webp, images/gallery/01-dates/dates-23.webp, images/gallery/01-dates/dates-24.webp, images/gallery/01-dates/dates-25.webp, images/gallery/01-dates/dates-26.webp">
-          <span>Dates</span>
-        </div>
-        <div
-          class="gallery-item"
-          data-images="images/gallery/02-vacations/vacations-01.webp, images/gallery/02-vacations/vacations-02.webp, images/gallery/02-vacations/vacations-03.webp, images/gallery/02-vacations/vacations-04.webp, images/gallery/02-vacations/vacations-05.webp, images/gallery/02-vacations/vacations-06.webp, images/gallery/02-vacations/vacations-07.webp, images/gallery/02-vacations/vacations-08.webp, images/gallery/02-vacations/vacations-09.webp, images/gallery/02-vacations/vacations-10.webp, images/gallery/02-vacations/vacations-11.webp, images/gallery/02-vacations/vacations-12.webp, images/gallery/02-vacations/vacations-13.webp, images/gallery/02-vacations/vacations-14.webp, images/gallery/02-vacations/vacations-15.webp, images/gallery/02-vacations/vacations-16.webp, images/gallery/02-vacations/vacations-17.webp, images/gallery/02-vacations/vacations-18.webp, images/gallery/02-vacations/vacations-19.webp, images/gallery/02-vacations/vacations-20.webp, images/gallery/02-vacations/vacations-21.webp, images/gallery/02-vacations/vacations-22.webp, images/gallery/02-vacations/vacations-23.webp, images/gallery/02-vacations/vacations-24.webp, images/gallery/02-vacations/vacations-25.webp, images/gallery/02-vacations/vacations-26.webp, images/gallery/02-vacations/vacations-27.webp, images/gallery/02-vacations/vacations-28.webp, images/gallery/02-vacations/vacations-29.webp, images/gallery/02-vacations/vacations-30.webp, images/gallery/02-vacations/vacations-31.webp, images/gallery/02-vacations/vacations-32.webp">
-          <span>Vacations</span>
-        </div>
-        <div
-          class="gallery-item"
-          data-images="images/gallery/03-family-gatherings/family-gatherings-01.webp, images/gallery/03-family-gatherings/family-gatherings-02.webp, images/gallery/03-family-gatherings/family-gatherings-03.webp, images/gallery/03-family-gatherings/family-gatherings-04.webp, images/gallery/03-family-gatherings/family-gatherings-05.webp">
-          <span>Family Gatherings</span>
-        </div>
-        <div
-          class="gallery-item"
-          data-images="images/gallery/04-engagement/engagement-01.webp, images/gallery/04-engagement/engagement-02.webp, images/gallery/04-engagement/engagement-03.webp, images/gallery/04-engagement/engagement-04.webp, images/gallery/04-engagement/engagement-05.webp, images/gallery/04-engagement/engagement-06.webp, images/gallery/04-engagement/engagement-07.webp, images/gallery/04-engagement/engagement-08.webp, images/gallery/04-engagement/engagement-09.webp, images/gallery/04-engagement/engagement-10.webp, images/gallery/04-engagement/engagement-11.webp, images/gallery/04-engagement/engagement-12.webp">
-          <span>Engagement</span>
-        </div>
+      <div class="new-gallery">
+        <img
+          class="four-grid-cells"
+          src="images\gallery\04-engagement\engagement-08.webp"
+        />
+
+        <img src="images\gallery\04-engagement\engagement-04.webp" />
+
+        <img
+          class="wide-image"
+          src="images\gallery\04-engagement\engagement-01.webp"
+        />
+
+        <img
+          src="https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg"
+        />
+
+        <img
+          src="https://images.pexels.com/photos/4101555/pexels-photo-4101555.jpeg"
+        />
+
+        <img
+          class="wide-image"
+          src="images\gallery\03-family-gatherings\family-gatherings-04.webp"
+        />
+
+        <img
+          src="https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg"
+        />
+        <img
+          class="wide-image"
+          src="images\gallery\01-dates\dates-10.webp"
+        />
+        <img
+          class="wide-image"
+          src="images\gallery\03-family-gatherings\family-gatherings-04.webp"
+        />
       </div>
     </section>
 
